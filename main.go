@@ -11,6 +11,8 @@ import (
 	"go-todo-app/models"
 	"go-todo-app/routes"
 
+	_ "go-todo-app/docs"
+
 	"github.com/joho/godotenv"
 )
 

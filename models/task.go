@@ -2,13 +2,17 @@ package models
 
 import (
 	"go-todo-app/config"
-	"gorm.io/gorm"
+
+	"time"
 )
 
 type Task struct {
-	gorm.Model
-	Title     string `json:"title"`
-	Completed bool   `json:"completed"`
+	ID        uint       `json:"id" example:"1"`
+	Title     string     `json:"title" example:"Buy groceries"`
+	Completed bool       `json:"completed" example:"false"`
+	CreatedAt time.Time  `json:"created_at"`
+	UpdatedAt time.Time  `json:"updated_at"`
+	DeletedAt *time.Time `json:"deleted_at,omitempty"`
 }
 
 func AutoMigrate() {
