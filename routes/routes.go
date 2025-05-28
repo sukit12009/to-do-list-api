@@ -17,7 +17,7 @@ func RegisterRoutes() *mux.Router {
 	router.HandleFunc("/tasks/{id}", controllers.UpdateTask).Methods("PUT")
 	router.HandleFunc("/tasks/{id}", controllers.DeleteTask).Methods("DELETE")
 
-	router.PathPrefix("/swagger").Handler(httpSwagger.WrapHandler)
+	router.PathPrefix("/swagger/").Handler(httpSwagger.WrapHandler)
 
 	return router
 }
